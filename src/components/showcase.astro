@@ -41,8 +41,13 @@ const somelogos = [
             <ul class="flex flex-row justify-center">
 
                 {somelogos.map(l => (
+                    <div class='flex flex-col p-2 items-center text-indigo-500'>
                     <img src={l.path} class='max-w-10 w-16 p-2' alt={l.id} />
-                    ))}
+                    <div>{l.id.toUpperCase()}</div>
+                    </div>
+                    ))
+                    
+                }
                     </ul>
         </div>
     </div>
