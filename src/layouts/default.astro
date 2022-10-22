@@ -1,0 +1,15 @@
+---
+export interface Props {
+    title?: String;
+}
+const {title = 'Astro crash course'} = Astro.props as Props;
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
