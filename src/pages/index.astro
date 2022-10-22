@@ -1,10 +1,37 @@
 ---
 import Layout from '../layouts/default.astro';
 import Showcase from '../components/showcase.astro';
+import Features from '../components/features.astro';
+
+const cards = [
+    {
+        slug: 'zero-javascript-runtime',
+        title: 'Zero JavaScript Runtime',
+        body: 'Astro renders HTML on the server and strips away any remaining, unused JavaScript.',
+        logo: '',
+    },
+    {
+        slug: 'the-power-of-islands',
+        title: 'The Power of Islands',
+        body: 'Need interactive UI? Load individual, non-blocking component islands in parallel.',
+        logo: '',
+    },
+    {
+        slug: 'lazy-loading-islands',
+        title: 'Lazy-Loading Islands',
+        body: `Components only hydrate when they scroll into view. If you don't see it, Astro won't load it.`,
+        logo: '',
+    },
+];
 ---
+
 <Layout>
-	<>
-	<Showcase />
-	<h1 class='text-5xl text-indigo-800'>Hello {'world'.toUpperCase()} &rarr;</h1>
-	</>
+    <>
+        <Showcase />
+        <h1 class='text-5xl text-indigo-800'>
+            Hello {'world'.toUpperCase()} &rarr;
+        </h1>
+
+        <Features cards={cards} />
+    </>
 </Layout>

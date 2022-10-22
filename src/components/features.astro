@@ -1,0 +1,20 @@
+---
+import CardFeature from './cardFeature.astro';
+
+export interface CardType {
+    slug: String;
+    title: String;
+    body: String;
+    logo?: String;
+}
+
+export interface Props {
+    cards: CardType[];
+}
+
+const { cards } = Astro.props as Props;
+---
+
+<section class='grid grid-cols-3 gap-5 mx-10'>
+    {cards.map((c) => <CardFeature card={c} />)}
+</section>

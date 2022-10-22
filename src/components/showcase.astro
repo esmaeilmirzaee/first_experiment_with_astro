@@ -4,51 +4,66 @@ export interface Props {
     subtitle?: String;
 }
 
-const {title='Welcome to the Astro Crash Course', subtitle='Build super fast HTML-first websites using your favorite JavaScript frameworks'} = Astro.props as Props;
+const {
+    title = 'Welcome to the Astro Crash Course',
+    subtitle = 'Build super fast HTML-first websites using your favorite JavaScript frameworks',
+} = Astro.props as Props;
 
 const somelogos = [
-    {id: 'tailwind', path: 'https://www.svgrepo.com/show/354431/tailwindcss-icon.svg'},
     {
-        id:'adobexd',
-        path: 'https://www.svgrepo.com/show/303346/adobe-xd-1-logo.svg'
+        id: 'tailwind',
+        path: 'https://www.svgrepo.com/show/354431/tailwindcss-icon.svg',
     },
     {
-        id:'acrobat',
-        path:'https://www.svgrepo.com/show/93657/adobe.svg'
+        id: 'adobexd',
+        path: 'https://www.svgrepo.com/show/303346/adobe-xd-1-logo.svg',
+    },
+    {
+        id: 'acrobat',
+        path: 'https://www.svgrepo.com/show/93657/adobe.svg',
     },
     {
         id: 'adobeillustrator',
-        path: 'https://www.svgrepo.com/show/76800/adobe-illustrator.svg'
+        path: 'https://www.svgrepo.com/show/76800/adobe-illustrator.svg',
     },
     {
         id: 'adobephotoshop',
-        path: 'https://www.svgrepo.com/show/31106/adobe-photoshop.svg'
+        path: 'https://www.svgrepo.com/show/31106/adobe-photoshop.svg',
     },
-    {'id': 'firefox', path:'https://www.svgrepo.com/show/7082/firefox.svg'},
-    {'id': 'linux', path: 'https://www.svgrepo.com/show/7095/linux.svg'},
-    {'id': 'windows', path: 'https://www.svgrepo.com/show/12902/windows.svg'},
-    {'id': 'java', path: 'https://www.svgrepo.com/show/43101/java.svg'},
-]
+    { id: 'firefox', path: 'https://www.svgrepo.com/show/7082/firefox.svg' },
+    { id: 'linux', path: 'https://www.svgrepo.com/show/7095/linux.svg' },
+    { id: 'windows', path: 'https://www.svgrepo.com/show/12902/windows.svg' },
+    { id: 'java', path: 'https://www.svgrepo.com/show/43101/java.svg' },
+];
 ---
 
 <section>
-    <div class='w-screen bg-gradient-to-b from-violet-800 to-violet-500 min-h-48 text-white text-center p-10'>
-        <h1 class="text-6xl font-black m-4">{title}</h1>
+    <div
+        class='w-screen bg-gradient-to-b from-violet-800 to-violet-500 min-h-48 text-white text-center p-10'
+    >
+        <h1 class='text-6xl font-black m-4'>{title}</h1>
         <h6 class='text-4xl font-semibold m-10'>{subtitle}</h6>
-        <img class="w-auto max-h-40 content-cover mx-auto rounded shadow" src='https://images.unsplash.com/photo-1665072523770-601bd7e96aef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1079&q=80' alt='Just a random image from Unsplash' />
+        <img
+            class='w-auto max-h-40 content-cover mx-auto rounded shadow'
+            src='https://images.unsplash.com/photo-1665072523770-601bd7e96aef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1079&q=80'
+            alt='Just a random image from Unsplash'
+        />
 
-        <div class="bg-violet-50 px-10 rounded shadow-sm m-4 inline-block">
-            <ul class="flex flex-row justify-center">
-
-                {somelogos.map(l => (
-                    <div class='flex flex-col p-2 items-center text-indigo-500'>
-                    <img src={l.path} class='max-w-10 w-16 p-2' alt={l.id} />
-                    <div>{l.id.toUpperCase()}</div>
-                    </div>
+        <div class='bg-violet-50 px-10 rounded shadow-sm m-4 inline-block'>
+            <ul class='flex flex-row justify-center'>
+                {
+                    somelogos.map((l) => (
+                        <div class='flex flex-col p-2 items-center text-indigo-500'>
+                            <img
+                                src={l.path}
+                                class='max-w-10 w-16 p-2'
+                                alt={l.id}
+                            />
+                            <div>{l.id.toUpperCase()}</div>
+                        </div>
                     ))
-                    
                 }
-                    </ul>
+            </ul>
         </div>
     </div>
 </section>

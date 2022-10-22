@@ -1,0 +1,16 @@
+---
+import { CardType } from './features.astro';
+
+export interface Props {
+    card: CardType;
+}
+const { card } = Astro.props as Props;
+---
+
+<a
+    class='bg-violet-900 text-violet-100 p-4 rounded border border-violet-400'
+    href={`features/${card.slug}`}
+>
+    <h1 class='text-3xl py-2'>{card.title}</h1>
+    <p>{card.body}</p>
+</a>
